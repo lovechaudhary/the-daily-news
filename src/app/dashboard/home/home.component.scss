@@ -91,6 +91,13 @@ header {
   width: 100%;
   height: 100%;
 }
+.main-section .news-article a {
+  text-decoration: none;
+  color: #000;
+}
+.main-section .news-article a:hover {
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 600px) {
   .main-section .news-article {

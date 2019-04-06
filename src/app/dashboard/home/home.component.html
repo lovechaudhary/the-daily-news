@@ -26,7 +26,7 @@
   <div class="main-section">
     <div class="news-article" *ngFor="let singleNews of news">
       <img [src]="singleNews.urlToImage" />
-      <span>{{ singleNews.title }}</span>
+      <a [href]="singleNews.url" target="_blank">{{ singleNews.title }}</a>
       <br />
       <small
         ><br /><i
