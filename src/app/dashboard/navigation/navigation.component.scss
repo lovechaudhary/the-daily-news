@@ -1,0 +1,45 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.country a {
+  font-size: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.country a:hover {
+  text-decoration: underline;
+}
+.search {
+  margin: 0 15px 0 0;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+.menu-navigation {
+  display: none;
+}
+.search-menu {
+  display: none;
+}
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 38px;
+}
+
+.country a {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 799px) {
+  .inline-navigation {
+    display: none;
+  }
+  .menu-navigation {
+    display: block;
+  }
+  .search-menu {
+    display: block;
+    margin: 0 15px 0 0;
+    border: 1px solid #ddd;
+    padding: 4px;
+  }
+}

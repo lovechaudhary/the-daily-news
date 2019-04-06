@@ -1,0 +1,43 @@
+<mat-toolbar>
+  <span>The Daily News</span>
+  <div class="spacer"></div>
+
+  <div class="inline-navigation">
+    <!-- Navigation links -->
+    <div class="navigation-link-container">
+      <div class="country">
+        <input
+          type="text"
+          class="search"
+          placeholder="search"
+          (keydown.enter)="run($event)"
+        />
+        <a (click)="changeCountryRegion('us')">US</a>&nbsp;<a
+          (click)="changeCountryRegion('ca')"
+          >CA</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <input
+    type="text"
+    class="search-menu"
+    placeholder="search"
+    (keydown.enter)="run($event)"
+  />
+  <div class="menu-navigation">
+    <div [matMenuTriggerFor]="menu" class="navigation-link-container">
+      <mat-icon class="link-icon">menu</mat-icon>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      <button routerLink="/us" routerLinkActive="active" mat-menu-item>
+        US
+      </button>
+      <button routerLink="/ca" routerLinkActive="active" mat-menu-item>
+        CA
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

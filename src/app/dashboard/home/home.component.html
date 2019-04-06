@@ -1,0 +1,54 @@
+<div [class.overlay]="isLoading"></div>
+<div [class.loading]="isLoading">
+  <mat-spinner *ngIf="isLoading" style="margin: 20% auto;"></mat-spinner>
+  <h4 *ngIf="isLoading" style="text-align: center">
+    Loading News Articles.....
+  </h4>
+</div>
+<mat-card>
+  <header>The Daily News</header>
+  <div class="date">{{ month }} {{ day }}, {{ year }}</div>
+  <hr />
+  <div class="special-links">
+    <ul>
+      <li>Trending Topics:</li>
+      <li><a (click)="categoryLink('business')">Business</a></li>
+      <li><a (click)="categoryLink('entertainment')">Entertainment</a></li>
+      <li><a (click)="categoryLink('general')">General</a></li>
+      <li><a (click)="categoryLink('health')">Health</a></li>
+      <li><a (click)="categoryLink('science')">Science</a></li>
+      <li><a (click)="categoryLink('sports')">Sports</a></li>
+      <li><a (click)="categoryLink('technology')">Technology</a></li>
+    </ul>
+  </div>
+</mat-card>
+<mat-card class="content">
+  <div class="main-section">
+    <div class="news-article" *ngFor="let singleNews of news">
+      <img [src]="singleNews.urlToImage" />
+      <span>{{ singleNews.title }}</span>
+      <br />
+      <small
+        ><br /><i
+          ><b>Source: {{ singleNews.source.name }}</b></i
+        ></small
+      >
+    </div>
+  </div>
+  <div class="sidebar">
+    <h2>Hot Topic</h2>
+    <ul *ngFor="let top of topFour">
+      <li>
+        <a [href]="top.url" target="_blank">
+          {{ top.title }}
+          <br />
+          <small
+            ><i
+              ><b>Source: {{ top.source.name }}</b></i
+            ></small
+          >
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-card>
