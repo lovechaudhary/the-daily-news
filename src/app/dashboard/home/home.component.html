@@ -22,6 +22,16 @@
     </ul>
   </div>
 </mat-card>
+<mat-card>
+  <h2 *ngIf="isCategory">
+    &nbsp;Category:&nbsp;
+    {{ categoryString.charAt(0).toUpperCase() + categoryString.slice(1) }}
+  </h2>
+  <h2 *ngIf="isSearch">
+    &nbsp;Search:&nbsp;
+    {{ searchString.charAt(0).toUpperCase() + searchString.slice(1) }}
+  </h2>
+</mat-card>
 <mat-card class="content">
   <div class="main-section">
     <div class="news-article" *ngFor="let singleNews of news">
