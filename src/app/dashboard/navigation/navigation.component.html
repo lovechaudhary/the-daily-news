@@ -32,10 +32,10 @@
     </div>
 
     <mat-menu #menu="matMenu">
-      <button routerLink="/us" routerLinkActive="active" mat-menu-item>
+      <button (click)="changeCountryRegion('us')" mat-menu-item>
         US
       </button>
-      <button routerLink="/ca" routerLinkActive="active" mat-menu-item>
+      <button (click)="changeCountryRegion('ca')" mat-menu-item>
         CA
       </button>
     </mat-menu>
