@@ -99,13 +99,50 @@ header {
   text-decoration: underline;
 }
 
+.responsive-area {
+  display: none;
+}
+.main-window {
+  display: block;
+}
+
 @media screen and (max-width: 600px) {
-  .main-section .news-article {
-    display: inline-block;
-    width: 45%;
-    background: #efefef;
-    height: auto;
-    padding: 10px;
-    margin: 0 7px 7px 7px;
+  .main-window {
+    display: none;
+  }
+
+  .responsive-area {
+    display: block;
+
+    .content {
+      display: table-row;
+    }
+    .main-section {
+      width: 100%;
+      height: 20%;
+    }
+    .sidebar {
+      width: 100%;
+      height: 20%;
+    }
+    .main-section .news-article {
+      display: inline-block;
+      width: 100%;
+      background: #efefef;
+      height: auto;
+      padding: 1%;
+      margin: 0 1% 1% 1%;
+    }
+    .main-section .news-article img {
+      width: 100%;
+      height: 100%;
+    }
+    .main-section .news-article a {
+      text-decoration: none;
+      color: #000;
+    }
+    .main-section .news-article a:hover {
+      text-decoration: underline;
+    }
   }
 }

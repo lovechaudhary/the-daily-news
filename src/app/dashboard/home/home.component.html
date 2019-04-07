@@ -22,43 +22,99 @@
     </ul>
   </div>
 </mat-card>
-<mat-card>
-  <h2 *ngIf="isCategory">
-    &nbsp;Category:&nbsp;
-    {{ categoryString.charAt(0).toUpperCase() + categoryString.slice(1) }}
-  </h2>
-  <h2 *ngIf="isSearch">
-    &nbsp;Search:&nbsp;
-    {{ searchString.charAt(0).toUpperCase() + searchString.slice(1) }}
-  </h2>
-</mat-card>
-<mat-card class="content">
-  <div class="main-section">
-    <div class="news-article" *ngFor="let singleNews of news">
-      <img [src]="singleNews.urlToImage" />
-      <a [href]="singleNews.url" target="_blank">{{ singleNews.title }}</a>
-      <br />
-      <small
-        ><br /><i
-          ><b>Source: {{ singleNews.source.name }}</b></i
-        ></small
-      >
-    </div>
-  </div>
-  <div class="sidebar">
-    <h2>Hot Topic</h2>
-    <ul *ngFor="let top of topFour">
-      <li>
-        <a [href]="top.url" target="_blank">
-          {{ top.title }}
+
+<div class="main-window">
+  <mat-card>
+    <h2 *ngIf="isCategory">
+      &nbsp;Category:&nbsp;
+      {{ categoryString.charAt(0).toUpperCase() + categoryString.slice(1) }}
+    </h2>
+    <h2 *ngIf="isSearch">
+      &nbsp;Search:&nbsp;
+      {{ searchString.charAt(0).toUpperCase() + searchString.slice(1) }}
+    </h2>
+  </mat-card>
+  <mat-card class="content">
+    <div class="main-section">
+      <div class="news-article" *ngFor="let singleNews of news">
+        <img [src]="singleNews.urlToImage" />
+        <a [href]="singleNews.url" target="_blank">{{ singleNews.title }}</a>
+        <br />
+        <small>
           <br />
-          <small
-            ><i
-              ><b>Source: {{ top.source.name }}</b></i
-            ></small
+          <i
+            ><b>Source: {{ singleNews.source.name }}</b></i
           >
-        </a>
-      </li>
-    </ul>
-  </div>
-</mat-card>
+          <br />
+          <i
+            ><b>Author: {{ singleNews.author }}</b></i
+          >
+        </small>
+      </div>
+    </div>
+    <div class="sidebar">
+      <h2>Hot Topic</h2>
+      <ul *ngFor="let top of topFour">
+        <li>
+          <a [href]="top.url" target="_blank">
+            {{ top.title }}
+            <br />
+            <small
+              ><i
+                ><b>Source: {{ top.source.name }}</b></i
+              ></small
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </mat-card>
+</div>
+
+<div class="responsive-area">
+  <mat-card>
+    <h2 *ngIf="isCategory">
+      &nbsp;Category:&nbsp;
+      {{ categoryString.charAt(0).toUpperCase() + categoryString.slice(1) }}
+    </h2>
+    <h2 *ngIf="isSearch">
+      &nbsp;Search:&nbsp;
+      {{ searchString.charAt(0).toUpperCase() + searchString.slice(1) }}
+    </h2>
+  </mat-card>
+  <mat-card class="content">
+    <div class="main-section">
+      <div class="news-article" *ngFor="let singleNews of news">
+        <img [src]="singleNews.urlToImage" />
+        <a [href]="singleNews.url" target="_blank">{{ singleNews.title }}</a>
+        <br />
+        <small>
+          <br />
+          <i
+            ><b>Source: {{ singleNews.source.name }}</b></i
+          >
+          <br />
+          <i
+            ><b>Source: {{ singleNews.author }}</b></i
+          >
+        </small>
+      </div>
+    </div>
+    <div class="sidebar">
+      <h2>Hot Topic</h2>
+      <ul *ngFor="let top of topFour">
+        <li>
+          <a [href]="top.url" target="_blank">
+            {{ top.title }}
+            <br />
+            <small
+              ><i
+                ><b>Source: {{ top.source.name }}</b></i
+              ></small
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </mat-card>
+</div>
