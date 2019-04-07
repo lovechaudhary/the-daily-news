@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     ];
     const month = new Date().getUTCMonth();
     this.month = monthNames[month];
-    this.day = new Date().getUTCDay();
+    this.day = new Date().getUTCDate();
     this.year = new Date().getUTCFullYear();
 
     this._activatedRoute.params.subscribe(param => {
