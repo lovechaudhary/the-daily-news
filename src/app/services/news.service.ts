@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Article } from "../insterfaces/article";
+import { environment } from "./../../environments/environment";
 
 export class DataResponse<T> {
   totalResults?: number;
@@ -21,7 +22,7 @@ export class NewsService {
         ? "us"
         : countryName;
     return this._http
-      .get(`https://newsapi.org/v2/top-headlines?country=${country}`, {
+      .get(`${environment.host}/top-headlines?country=${country}`, {
         headers: this.getHeaders()
       })
       .pipe(
@@ -38,7 +39,9 @@ export class NewsService {
         : countryName;
     return this._http
       .get(
-        `https://newsapi.org/v2/top-headlines?country=${country}&sortBy=popularity&pageSize=4`,
+        `${
+          environment.host
+        }/top-headlines?country=${country}&sortBy=popularity&pageSize=4`,
         {
           headers: this.getHeaders()
         }
@@ -52,7 +55,7 @@ export class NewsService {
 
   getSearchedNews(query: string): Observable<DataResponse<Article>> {
     return this._http
-      .get(`https://newsapi.org/v2/everything?q=${query}`, {
+      .get(`${environment.host}/everything?q=${query}`, {
         headers: this.getHeaders()
       })
       .pipe(
@@ -64,7 +67,7 @@ export class NewsService {
 
   getTopics(category: string): Observable<DataResponse<Article>> {
     return this._http
-      .get(`https://newsapi.org/v2/top-headlines?category=${category}`, {
+      .get(`${environment.host}/top-headlines?category=${category}`, {
         headers: this.getHeaders()
       })
       .pipe(
