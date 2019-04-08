@@ -1,4 +1,4 @@
 export interface IEnviornment {
-    production: boolean;
-    host: string
+  production: boolean;
+  host: string;
 }
